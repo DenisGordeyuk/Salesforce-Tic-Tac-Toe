@@ -1,0 +1,59 @@
+<template>
+	<div class="slds-grid slds-wrap">
+		<div class="slds-size_3-of-7 slds-text-align_right">{user1.Name}</div>
+		<div class="slds-size_1-of-7 slds-grid slds-wrap">
+			<div class="slds-size_1-of-3 slds-align_absolute-center">{user1Score}</div>
+			<div class="slds-size_1-of-3x slds-align_absolute-center">:</div>
+			<div class="slds-size_1-of-3 slds-align_absolute-center">{user2Score}</div>
+		</div>
+		<div class="slds-size_3-of-7 slds-text-align_left">{user2.Name}</div>
+	</div>
+	&emsp;
+	<div align="center" style="width: 99,5%">
+		<lightning-button
+		 	if:true={isNextRoundVisible}
+		 	variant="success"
+			label="Next round"
+		 	onclick={nextRound}>
+		</lightning-button>
+	</div>
+	
+	<div data-id="boardId" class="board">
+		<div data-id="div1" class="board-tile" onclick={stepClick}>
+			<lightning-icon class="slds-align-absolute-center" size="large" data-id="icon1" icon-name="">
+			</lightning-icon>
+		</div>
+		<div data-id="div2" class="board-tile" onclick={stepClick}>
+			<lightning-icon class="slds-align-absolute-center" size="large" data-id="icon2" icon-name="">
+			</lightning-icon>
+		</div>
+		<div data-id="div3" class="board-tile" onclick={stepClick}>
+			<lightning-icon class="slds-align-absolute-center" size="large" data-id="icon3" icon-name="">
+			</lightning-icon>
+		</div>
+		<div data-id="div4" class="board-tile" onclick={stepClick}>
+			<lightning-icon class="slds-align-absolute-center" size="large" data-id="icon4" icon-name="">
+			</lightning-icon>
+		</div>
+		<div data-id="div5" class="board-tile" onclick={stepClick}>
+			<lightning-icon class="slds-align-absolute-center" size="large" data-id="icon5" icon-name="">
+			</lightning-icon>
+		</div>
+		<div data-id="div6" class="board-tile" onclick={stepClick}>
+			<lightning-icon class="slds-align-absolute-center" size="large" data-id="icon6" icon-name="">
+			</lightning-icon>
+		</div>
+		<div data-id="div7" class="board-tile" onclick={stepClick}>
+			<lightning-icon class="slds-align-absolute-center" size="large" data-id="icon7" icon-name="">
+			</lightning-icon>
+		</div>
+		<div data-id="div8" class="board-tile" onclick={stepClick}>
+			<lightning-icon class="slds-align-absolute-center" size="large" data-id="icon8" icon-name="">
+			</lightning-icon>
+		</div>
+		<div data-id="div9" class="board-tile" onclick={stepClick}>
+			<lightning-icon class="slds-align-absolute-center" size="large" data-id="icon9" icon-name="">
+			</lightning-icon>
+		</div>
+	</div>
+</template>

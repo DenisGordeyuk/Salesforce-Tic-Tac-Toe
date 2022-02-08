@@ -1,0 +1,22 @@
+<template>
+	<canvas class="confettiCanvas" id="canvas" lwc:dom="manual"></canvas> 
+
+	<div class="title">
+		<h1>- - Tic • Tac • Toe - -</h1>
+	</div>
+	<template if:true={loaded}>
+		<lightning-spinner alternative-text="Loading" size="medium"></lightning-spinner>
+	</template>
+	<lightning-card>
+
+		
+		<lightning-tabset>
+			<lightning-tab label="Game">
+				<c-ttt-game onhidespinner={hideSpinner} onwinconfettirun={winNextGame}></c-ttt-game>
+			</lightning-tab>
+			<lightning-tab label="History">
+				<c-ttt-history-game></c-ttt-history-game>
+			</lightning-tab>
+		</lightning-tabset>
+	</lightning-card>
+</template>

@@ -1,0 +1,42 @@
+.board {
+	margin: 0 auto;
+	display: grid;
+	grid-template-columns: 33% 33% 33%;
+	grid-template-rows: 33% 33% 33%;
+	max-width: 300px;
+	margin-top: 30px;
+}
+
+.board-tile {
+	border: 1px inset rgb(23, 152, 193);
+	height: 100px;
+	width: 100px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 50px;
+	cursor: pointer;
+}
+
+.board-tile:hover {
+	background-color: #87cfeb96;
+}
+
+.not-active {
+	pointer-events: none;
+
+}
+
+.win-color {
+	background-color: rgba(233, 13, 13, 0.849);
+}
+
+.slds-grid {
+	font-size: 20px;
+	font-family: Comic Sans MS, Comic Sans, cursive;
+}
+
+.slds-size_1-of-3x {
+	font-size: 20px;
+	font-family: Comic Sans MS, Comic Sans, cursive;
+}

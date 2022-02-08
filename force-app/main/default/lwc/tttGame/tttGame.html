@@ -1,0 +1,16 @@
+<template>
+	<lightning-card ing-card>
+		<c-ttt-select-players 
+									onshowgamefield={handleChange}
+									onhidegamefield={handleChange}
+									onloaded={hideSpinnerEvent}
+									onseconduserchoosen={secondUserChoosen}
+									onfirstuserchoosen={firstUserChoosen}>
+		</c-ttt-select-players>
+		<template if:true={isGameFieldVisible}>
+			<lightning-card>
+				<c-ttt-game-field user1={user1} user2={user2} history={history}></c-ttt-game-field>
+			</lightning-card>
+		</template>
+	</lightning-card>
+</template>

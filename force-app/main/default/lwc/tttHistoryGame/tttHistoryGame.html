@@ -1,0 +1,73 @@
+<template>
+	<table class="table" >
+		<thead>
+			<tr>
+				<th>Game</th>
+				<th>Player 1</th>
+				<th>Player 2</th>
+				<th>Winner</th>
+				<th>Statistics</th>
+				<th>Game Date </th>
+				<th>Rounds</th>
+		  </tr>
+		</thead>
+			<tbody>
+				<template for:each={gameHistory} for:item="field">
+					<tr key={field.Id}>
+						 <td>{field.Name}</td>
+						 <td>{field.Player_1__r.Name}</td>
+						 <td>{field.Player_2__r.Name}</td>
+						 <template if:true={field.Winner__c}>
+						 	<td>{field.Winner__r.Name}</td>
+						</template>
+						<template if:false={field.Winner__c}>
+							<td>No Winner</td>
+					  </template>
+						 <td>{field.Status__c}</td>
+						 <td>{field.Game_Date__c}</td>
+						 <td>
+							<lightning-button
+								variant="Brand"
+								label="Open Rounds"
+								title="Open Rounds"
+								data-id={field.Id}  
+								onclick={openModal}>
+ 							</lightning-button>
+						 </td>  
+					</tr>
+			  </template>	
+			</tbody>
+	</table>
+	<template if:true={showModalBox}>
+	<section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open slds-modal_small" aria-labelledby="modal-heading-01" aria-modal="true">
+		<div class="slds-modal__container">
+		  <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse">
+			 <svg class="slds-button__icon slds-button__icon_large" aria-hidden="true">
+				<use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#close"></use>
+			 </svg>
+			 <span class="slds-assistive-text">Cancel and close</span>
+		  </button>
+		  <div class="slds-modal__header">
+			 <h1 id="modal-heading-01" class="slds-modal__title slds-hyphenate">Rounds</h1>
+		  </div>
+		  <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+			<div style="height: 300px;">
+				<lightning-datatable
+						  key-field="id"
+						  data={roundHistories}
+						  columns={columns}>
+						  
+				</lightning-datatable>
+		  </div>  
+		  </div>
+		  <div class="slds-modal__footer">
+			 <button class="slds-button slds-button_neutral" aria-label="Cancel and close" onclick={closeModal}>Cancel</button>
+		  </div>
+		</div>
+	 </section>
+	 <div class="slds-backdrop slds-backdrop_open" role="presentation"></div>
+	</template>
+</template>   
+
+
+

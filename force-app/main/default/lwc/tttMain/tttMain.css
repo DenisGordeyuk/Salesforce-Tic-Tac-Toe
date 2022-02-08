@@ -1,0 +1,15 @@
+.title {
+	text-align: center;
+	background: -webkit-linear-gradient(to right, #83a4d4, #b6fbff);
+	background: linear-gradient(to right, #83a4d4, #b6fbff);
+	font-size: 30px;
+	font-family: Comic Sans MS, Comic Sans, cursive;
+
+}
+.h1 {
+	font-family: system-ui;
+}
+
+.confettiCanvas{
+	position: fixed;
+}
